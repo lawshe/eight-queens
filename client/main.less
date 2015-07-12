@@ -1,0 +1,79 @@
+@import url("variables.less");
+
+/*general*/
+	html,body{
+		margin: 0;
+	}
+	body{
+		background-color: @gray;
+		color: @black;
+		font-family:  Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+		font-size: 100%;
+		padding: @margin_lg;
+	}
+
+/*type*/
+	h1,h2,h3,p{
+		text-align: center;
+	}
+	h2{
+		.incomplete{
+			color: @pink;
+		}
+		.complete{
+			color: @green;
+		}
+	}
+	h3{
+		color: @black;
+		font-weight: normal;
+	}
+	h3,p{
+		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	}
+	.title{
+		display: inline-block;
+		&::first-letter{
+			font-size: 130%;
+		}
+	}
+
+/*chess board*/
+	table{
+		background-color: @white;
+		border: @border_sm solid @purple;
+		margin: @margin_lg auto;
+		border-spacing: 0;
+		border-collapse: collapse;
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+	tr,td{
+		height: 6vh; 
+	}
+	tr{
+		&:nth-child(even) td:nth-child(odd),
+		&:nth-child(odd) td:nth-child(even){
+			background-color: @purple;
+		}
+	}
+	td{
+		display: block;
+		float: left;
+		width: 6vh;
+	}
+	.queen{
+		height: 100%;
+		width: 100%;
+		font-size: 6vh;
+		line-height: 6vh;
+		cursor: move;
+		color: @gray-med;
+		&.complete{
+			color: @green;
+		}
+	}

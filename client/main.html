@@ -1,0 +1,111 @@
+<head>
+	<title>8 Queen Challenge</title>
+	<meta charset="UTF-8">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="viewport" content="width=device-width,maximum-scale=1,initial-scale=1,maximum-scale=1, user-scalable=0,minimal-ui">
+</head>
+
+<body>
+	<h1><div class="title">Eight</div> <div class="title">Queens</div> <div class="title">Puzzle</div></h1>
+</body>
+
+<template name="queen">
+	<a class="queen {{#if complete}}complete{{/if}}">&#9813;</a>
+</template>
+
+<template name="chessBoard">
+	<h3>Protect the Queens! Move the queens around the board so that no queen can attack another.</h3>
+	<div class="challenge_status"><h2>
+		{{#if complete}}<span class="complete">Complete!</span>
+		{{else}}<span class="incomplete">Incomplete</span>
+		{{/if}}
+	</h2></div>
+	<table id="chess_board">
+		<tr id="8">
+			<td>{{>queen}}</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr id="7">
+			<td></td>
+			<td>{{>queen}}</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr id="6">
+			<td></td>
+			<td></td>
+			<td>{{>queen}}</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr id="5">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>{{>queen}}</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr id="4">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>{{>queen}}</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr id="3">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>{{>queen}}</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr id="2">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>{{>queen}}</td>
+			<td></td>
+		</tr>
+		<tr id="1">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>{{>queen}}</td>
+		</tr>
+	</table>
+	<p class="challenge_msg">
+		{{#if diagonalAttack}}Hmm close. Queens aren't safe diagonally.{{/if}}
+		{{#if longLatAttack}}Hmm that's not right. Check columns and rows.{{/if}}
+	</p>
+</template>
